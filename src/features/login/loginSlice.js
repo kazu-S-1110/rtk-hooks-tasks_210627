@@ -28,7 +28,7 @@ export const fetchAsyncLogin = createAsyncThunk('login/post', async (auth) => {
 export const fetchAsyncRegister = createAsyncThunk(
   'login/register',
   async (auth) => {
-    const res = await axios.post(`${apiUrl}api/register`, auth, {
+    const res = await axios.post(`${apiUrl}api/register/`, auth, {
       headers: {
         'Content-Type': 'application/json',
       },

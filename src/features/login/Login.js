@@ -20,6 +20,19 @@ const Login = () => {
   //usernameとpasswordどちらかが空文字であるかの判別式
   const btnDisabler = authen.username === '' || authen.password === '';
 
+  const login = async () => {
+    if (isLoginView) {
+      await dispatch(fetchAsyncLogin(authen));
+    } else {
+      const result = await dispatch(fetchAsyncRegister(authen));
+
+      //register処理が正常に処理した場合
+      if (fetchAsyncRegister.fulfilled.match(result)) {
+        await dispatch(fetchAsyncLogin(authen));
+      }
+    }
+  };
+
   return (
     <div className={styles.containerLogin}>
       <div className={styles.appLogin}>
@@ -52,6 +65,14 @@ const Login = () => {
             {isLoginView ? 'Login' : 'Create'}
           </Button>
         </div>
+        <span
+          className={styles.switchText}
+          onClick={() => {
+            dispatch(toggleMode());
+          }}
+        >
+          {isLoginView ? 'Create Account ?' : 'Back to Login'}
+        </span>
       </div>
     </div>
   );
