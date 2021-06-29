@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:8000/';
+const apiUrl = 'https://api-rtk-task-r210629.herokuapp.com/';
 const token = localStorage.localJWT;
 
 const initialState = {
