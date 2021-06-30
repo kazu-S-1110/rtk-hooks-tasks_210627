@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiUrl = 'https://api-rtk-task-r210629.herokuapp.com/';
+const apiUrl = 'https://api-rtk-task-r210629.herokuapp.com/api/tasks/';
 const token = localStorage.localJWT;
 
 const initialState = {
@@ -108,6 +108,8 @@ const taskSlice = createSlice({
     });
   },
 });
+
+export const { editTask, selectTask } = taskSlice.actions;
 
 export const selectSelectedTask = (state) => state.task.selectTask;
 export const selectEditedTask = (state) => state.task.editedTask;
