@@ -1,0 +1,20 @@
+.details h2 {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+  margin: 18px;
+  font-family: "Comic Neue", cursive;
+}
+.details h3 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: "Comic Neue", cursive;
+  margin: 30px;
+  font-weight: 300;
+}
+.details p {
+  color: rgb(0, 0, 0);
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
+  font-weight: 300;
+}
