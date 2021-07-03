@@ -17,8 +17,8 @@ const TaskList = () => {
     fetchTaskProf();
   }, [dispatch]);
   return (
-    <div>
-      <ul className={styles.taskList}>
+    <div className={styles.taskList}>
+      <ul>
         {tasks.map((task) => (
           <TaskItem key={task.id} task={task} />
         ))}
